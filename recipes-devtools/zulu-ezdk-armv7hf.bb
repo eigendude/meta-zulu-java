@@ -1,8 +1,6 @@
-
-PV = "1.8.0"
-PV_UPDATE = "131"
-BUILD_NUMBER = "8.21.0.57"
-SUFFIX = "eval-linux_aarch32hf"
+PV = "11.1.8"
+PV_UPDATE = "CA"
+BUILD_NUMBER = "11+28-LTS"
 
 SUMMARY = "Azul Zulu Java Development Kit (JDK) binaries"
 DESCRIPTION = "This the Embedded JDK for the 32 bit ARM architecture from \
@@ -15,21 +13,21 @@ DESCRIPTION = "This the Embedded JDK for the 32 bit ARM architecture from \
 BBCLASSEXTEND = "native"
 
 LICENSE = "GPL-2.0-with-classpath-exception"
-LIC_FILES_CHKSUM = "file://ezdk-${PV}_${PV_UPDATE}-${BUILD_NUMBER}-${SUFFIX}/LICENSE;md5=3e0b59f8fac05c3c03d4a26bbda13f8f"
+LIC_FILES_CHKSUM = "file://zulu11.1.8-ca-jdk11-c2-linux_aarch32hf/LICENSE;md5=3e0b59f8fac05c3c03d4a26bbda13f8f"
 
-SRC_URI="http://cdn.azul.com/zulu-embedded/bin/ezdk-${PV}_${PV_UPDATE}-${BUILD_NUMBER}-${SUFFIX}.tar.gz"
+SRC_URI="http://cdn.azul.com/zulu-embedded/bin/zulu11.1.8-ca-jdk11-c2-linux_aarch32hf.tar.gz"
 
-SRC_URI[md5sum] = "a61482271dd42c0ee25d97ce5b672427"
-SRC_URI[sha256sum] = "abd354b0f477962014d72fa8404a355152ed083b8a989e325362470fb5b0e2b0"
+SRC_URI[md5sum] = "9aff035650bf9b7d923701bb31028844"
+SRC_URI[sha256sum] = "a10825eb946014a8232718627e5fd54fe47e4423ddaa423e65c78fc7e76ebaf9"
 
 PR = "u${PV_UPDATE}"
 S = "${WORKDIR}"
 
 do_install () {
-  install -d -m 0755 ${D}${datadir}/ezdk-${PV}_${PV_UPDATE}
-  cp -a ${S}/ezdk-${PV}_${PV_UPDATE}-${BUILD_NUMBER}-${SUFFIX}/* ${D}${datadir}/ezdk-${PV}_${PV_UPDATE}
+  install -d -m 0755 ${D}${datadir}/jdk-${PV}_${PV_UPDATE}
+  cp -a ${S}/zulu11.1.8-ca-jdk11-c2-linux_aarch32hf/* ${D}${datadir}/jdk-${PV}_${PV_UPDATE}
   install -d -m 0755 ${D}${bindir}
-  ln -sf ${datadir}/ezdk-${PV}_${PV_UPDATE}/bin/java ${D}${bindir}/java
+  ln -sf ${datadir}/jdk-${PV}_${PV_UPDATE}/bin/java ${D}${bindir}/java
 }
 
 # All the files are provided in a binaray package, and keeping all the
