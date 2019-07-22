@@ -1,6 +1,9 @@
 
 def get_recipe(d):
-   target_arch = d.getVar('TARGET_ARCH', True)
+   if d.getVar('PN', True).endswith('-native'):
+       target_arch = d.getVar('BUILD_ARCH', True)
+   else:
+       target_arch = d.getVar('TARGET_ARCH', True)
    if target_arch == "arm":
        if d.getVar('TARGET_FPU', True) in [ 'hard' ]:
            return "zulu-ezdk-armv7hf"
