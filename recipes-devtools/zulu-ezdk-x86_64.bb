@@ -40,7 +40,7 @@ INSANE_SKIP_${PN} = "${ERROR_QA} ${WARN_QA}"
 
 FILES_${PN} = "/usr/"
 RPROVIDES_${PN} = "zulu-jdk"
-PROVIDES += "virtual/java"
+PROVIDES += "virtual/java virtual/java-native"
 
 DEPENDS = "alsa-lib libxi libxrender libxtst"
 

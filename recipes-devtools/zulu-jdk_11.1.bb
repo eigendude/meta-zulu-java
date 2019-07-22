@@ -1,5 +1,3 @@
-inherit native
-
 def get_recipe(d):
    if d.getVar('PN', True).endswith('-native'):
        target_arch = d.getVar('BUILD_ARCH', True)
